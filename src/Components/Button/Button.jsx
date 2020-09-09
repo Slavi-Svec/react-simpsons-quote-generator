@@ -4,7 +4,7 @@ import './styles.scss'
 const Button = ({ heading, variant }) => (
   <button
     className={`button__${variant}`}
-    onClick={() => window.open()}
+    onClick={() => alert('hello')}
   >
     { heading }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Text from './Components/Text/Text'
 // import Image from './Components/Image/Image'
 import Button from './Components/Button/Button'
-import './App.css';
+import './App.scss';
 
 const simpsonsUrl = 'https://thesimpsonsquoteapi.glitch.me/quotes'
 
@@ -22,16 +22,21 @@ const App = () => {
   })
 
   return (
-    <div className="App">
-      <Text
-        text="quotes"
-        className="quote__title"
-        variant="h1"
-      />
+    <section className="main">
+      <div className="main__background">
+          <div className="main__container">
+            <Text
+              text="quotes"
+              className="quote__title"
+              variant="h1"
+            />
       {/* <Image className="quote__image src={quote} /> */}
-      <Button />
+      <Button className="quote__button" heading="Press for quote" variant="primary" />
 
-    </div>
+        </div>
+      </div>
+    </section>
+
   )
 }
 

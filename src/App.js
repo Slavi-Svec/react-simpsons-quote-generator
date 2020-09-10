@@ -63,11 +63,9 @@ const App = () => {
             quote={quote}
             author={character}
           /> */}
-
         </div>
       </div>
     </section>
-
   )
 }
 

@@ -1,34 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import Text from './Components/Text/Text'
-import Image from './Components/Image/Image'
-import Button from './Components/Button/Button'
-import SimpsonTitle from './Assets/simpsons-quotes-title.png'
-// import HomerImage from './Assets/homer-alternate.jpg'
-import './App.scss';
+import React, { useState } from 'react';
+import Text from './Components/Text/Text';
+import Image from './Components/Image/Image';
+import Button from './Components/Button/Button';
+import SimpsonTitle from './Assets/simpsons-quotes-title.png';
 import SocialShare from './Components/SocialShare/SocialShare';
-
-const simpsonsUrl = 'https://thesimpsonsquoteapi.glitch.me/quotes'
+import './App.scss';
 
 const App = () => {
-  const [character, setCharacter] = useState('')
   const [quote, setQuote] = useState('')
-  const [image, setImage] = useState('')
-  useEffect(() => {
-    fetch(simpsonsUrl)
+  const [character, setCharacter] = useState('')
+  const [image, setImage] = useState('https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FBartSimpson.png?1497567511638')
+  const returnQuotes = () => {
+    fetch('https://thesimpsonsquoteapi.glitch.me/quotes')
       .then((response) => response.json())
       .then((data) => {
-      const simpsonCharacter = data[0].character
-      const simpsonQuote = data[0].quote
-      const simpsonImage = data[0].image
-      // setCharacter(simpsonCharacter)
-      // setQuote(simpsonQuote)
-      // setImage(simpsonImage)
-
-    })
-  })
-
-  const testing = () => {
-     alert('hello')
+        setCharacter(data[0].character)
+        setQuote(data[0].quote)
+        setImage(data[0].image)
+        console.log(data)
+      })
   }
 
   return (
@@ -43,7 +33,7 @@ const App = () => {
             className="main__button"
             heading="Press for quote"
             variant="primary"
-            onClick={testing}
+            onClick={returnQuotes}
           />
           <Text
             className="main__quotes"
@@ -59,10 +49,10 @@ const App = () => {
             className="quote__image"
             src={image}
           />
-           {/* <SocialShare
+           <SocialShare
             quote={quote}
             author={character}
-          /> */}
+          />
         </div>
       </div>
     </section>
@@ -70,3 +60,7 @@ const App = () => {
 }
 
 export default App;
+
+
+
+

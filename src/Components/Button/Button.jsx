@@ -1,10 +1,10 @@
 import React from 'react'
 import './styles.scss'
 
-const Button = ({ heading, variant }) => (
+const Button = ({ heading, variant, onClick, }) => (
   <button
     className={`button__${variant}`}
-    onClick={() => alert('hello')}
+    onClick={onClick}
   >
     { heading }
 

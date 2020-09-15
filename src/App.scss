@@ -3,7 +3,6 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    align-items: center;
     justify-content: center;
     background: #71D0F5FF;
     font-family:  Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -19,8 +18,12 @@
     flex: 0 0 20%;
   }
 
-  &__image {
+  &__Title-image {
     width: 800px;
+  }
+
+  &__social-share {
+    border: 2px solid red;
   }
 
 

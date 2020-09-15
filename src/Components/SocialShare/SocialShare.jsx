@@ -1,13 +1,17 @@
 import React from 'react'
 
-const SocialShare = ({ quote, character }) => {
-  return (
-     <React.Fragment>
-        <a href={`https://twitter.com/intent/tweet?text= ${quote} ${character}`} target="_blank" title="Post this quote on twitter!" id='tweet-quote'>
-           <i className="fab fa-twitter twitter-icon" />
-        </a>
-     </React.Fragment>
-  )
+const SocialShare = ({ quote, character, className, icon, style }) => {
+   console.log(character)
+   return (
+      <a
+         href={`https://twitter.com/intent/tweet?text= ${quote} ${character}`}
+         target="_blank"
+         rel="noopener noreferrer"
+         className={className}
+      >
+      Twitter
+      </a>
+   )
 }
 
 export default SocialShare

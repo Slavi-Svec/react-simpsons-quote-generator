@@ -4,6 +4,7 @@ import Image from './Components/Image/Image';
 import Button from './Components/Button/Button';
 import SimpsonTitle from './Assets/simpsons-quotes-title.png';
 import SocialShare from './Components/SocialShare/SocialShare';
+// import TestButton from './Components/TestButton/TestButton'
 import './App.scss';
 
 const App = () => {
@@ -17,7 +18,6 @@ const App = () => {
         setCharacter(data[0].character)
         setQuote(data[0].quote)
         setImage(data[0].image)
-        console.log(data)
       })
   }
 
@@ -26,7 +26,7 @@ const App = () => {
       <div className="main__background">
         <div className="main__container">
           <Image
-          className="main__image"
+          className="main__Title-image"
           src={SimpsonTitle}
           />
           <Button
@@ -34,6 +34,11 @@ const App = () => {
             heading="Press for quote"
             variant="primary"
             onClick={returnQuotes}
+          />
+            <SocialShare
+            className="main__social-share"
+            quote={quote}
+            character={character}
           />
           <Text
             className="main__quotes"
@@ -46,12 +51,8 @@ const App = () => {
             variant="p"
           />
           <Image
-            className="quote__image"
+            className="main__image"
             src={image}
-          />
-           <SocialShare
-            quote={quote}
-            author={character}
           />
         </div>
       </div>
@@ -62,5 +63,6 @@ const App = () => {
 export default App;
 
 
+   {/* <div className="" */}
 
 

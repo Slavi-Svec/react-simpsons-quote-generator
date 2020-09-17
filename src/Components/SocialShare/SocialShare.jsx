@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {faTwitter} from "@fortawesome/free-brands-svg-icons"
 
 const SocialShare = ({ quote, character, className, icon, style }) => {
    console.log(character)
@@ -9,7 +11,7 @@ const SocialShare = ({ quote, character, className, icon, style }) => {
          rel="noopener noreferrer"
          className={className}
       >
-      Twitter
+      <FontAwesomeIcon icon={faTwitter} size="5x" />
       </a>
    )
 }

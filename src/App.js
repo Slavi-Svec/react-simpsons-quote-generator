@@ -6,6 +6,8 @@ import SimpsonTitle from './Assets/simpsons-quotes-title.png';
 import SocialShare from './Components/SocialShare/SocialShare';
 // import TestButton from './Components/TestButton/TestButton'
 import './App.scss';
+import {faComment} from "@fortawesome/free-regular-svg-icons"
+
 
 const App = () => {
   const [quote, setQuote] = useState('')
@@ -32,6 +34,7 @@ const App = () => {
           <Button
             className="main__button"
             heading="Press for quote"
+  
             variant="primary"
             onClick={returnQuotes}
           />
